@@ -246,7 +246,7 @@ build-dev:
       --no-warn-unused-cli
 
   # TODO: Consider pushing pre-built dev images to the registry.
-  # SAVE IMAGE --push osrf/space-ros-dev:latest osrf/space-ros-dev:$tag
+  # SAVE IMAGE --push tiipsrc/space-ros-dev:latest tiipsrc/space-ros-dev:$tag
 
 build-testing:
   FROM +build-dev
@@ -285,7 +285,7 @@ image:
   COPY docker/entrypoint.sh /ros_entrypoint.sh
   ENTRYPOINT ["/ros_entrypoint.sh"]
   CMD ["bash"]
-  SAVE IMAGE osrf/space-ros:${VERSION}
+  SAVE IMAGE tiipsrc/space-ros:${VERSION}
 
 # Target for prepping image(s) to be pushed to remote registries.
 push-image:
