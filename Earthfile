@@ -90,6 +90,9 @@ setup:
   # Create the spaceros directory
   RUN mkdir --mode=777 -p ${SPACEROS_DIR}
 
+  # remove ubuntu user that sometimes appears with id=1000 in base docker image
+  RUN userdel -r ubuntu
+
   # Create a spaceros user
   RUN useradd -m ${USERNAME} && \
     echo "${USERNAME}:${USERNAME}" | chpasswd && \
