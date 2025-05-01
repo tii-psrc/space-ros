@@ -292,6 +292,6 @@ push-image:
   FROM +image
 
   # This can be overridden with a blank string to prevent pushing to the registry.
-  ARG LATEST="osrf/space-ros:latest"
+  ARG LATEST="tiipsrc/space-ros:latest"
   ARG TAG
   SAVE IMAGE --push ${LATEST} ${TAG}
