@@ -8,6 +8,7 @@ console_bridge_vendor
 cyclonedds
 domain_coordinator
 eigen3_cmake_module
+fastcdr
 geometry_msgs
 gmock_vendor
 google_benchmark_vendor
@@ -34,6 +35,7 @@ rmw_cyclonedds_cpp
 rmw_dds_common
 rmw_implementation
 rmw_implementation_cmake
+rmw_zenoh_cpp
 robot_state_publisher
 ros2action
 ros2cli
@@ -54,6 +56,8 @@ ros_environment
 ros_testing
 rosgraph_msgs
 rosidl_cli
+rosidl_typesupport_fastrtps_c
+rosidl_typesupport_fastrtps_cpp
 sensor_msgs
 statistics_msgs
 std_msgs
