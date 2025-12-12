@@ -5,8 +5,8 @@
 #   docker
 #   an X server
 
-IMG_NAME=osrf/space-ros
-TAG=dev
+IMG_NAME=tiipsrc/space-ros
+TAG=latest
 
 # Replace `/` with `_` to comply with docker container naming
 # And append `_runtime`
