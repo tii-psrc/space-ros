@@ -1,7 +1,9 @@
 #!/bin/bash
-set -e
 
 # Setup the Space ROS environment
-source "${SPACEROS_DIR}/install/setup.bash"
-export IKOS_SCAN_NOTIFIER_FILES="" # make ikos create .ikosbin files for compiled packages
+
+# Tell shellcheck to ignore generated file from ROS build scripts
+# shellcheck source=/dev/null
+source "${SPACEROS_DIR}/setup.bash"
+
 exec "$@"

@@ -1,12 +1,30 @@
-<img src="/logos/spaceros_white_on_blue.png" alt="Space ROS Logo - White on Blue" width="700"/>
+<img src="./logos/spaceros_white_on_blue.png" alt="Space ROS Logo - White on Blue" width="700"/>
 
-Documentation is at https://space.ros.org.
+# Building the Space ROS image (TII version)
 
-For information on compiling the base Space ROS image see the [usage instructions](./docs/USAGE.md).
+1. Install [Earthly](https://earthly.dev/get-earthly/) (v0.8.0 or later).
 
-For information on the release process refere to the [release docs](./docs/RELEASE.md).
+```
+sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly && /usr/local/bin/earthly bootstrap --with-autocomplete'
+```
 
-# Contribution rules
+2. Build the Space ROS image using the following command:
 
-See the [contributing guide](https://github.com/space-ros/.github/blob/master/CONTRIBUTING.md) for details on how to contribute
-to the Space ROS project.
+```bash
+# To build the base Space ROS image
+earthly +main-image
+
+# To build the dev Space ROS image
+earthly +dev-image
+```
+
+3. Push to docker hub
+
+```
+docker tag tiipsrc/space-ros:latest tiipsrc/space-ros:scai-arm64-2025-12-12
+docker push tiipsrc/space-ros:scai-arm64-2025-12-12
+
+docker tag tiipsrc/space-ros:dev tiipsrc/space-ros:scai-arm64-2025-12-12-dev
+docker push tiipsrc/space-ros:scai-arm64-2025-12-12-dev
+```
+
