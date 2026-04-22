@@ -11,20 +11,8 @@ sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/latest/downloa
 2. Build the Space ROS image using the following command:
 
 ```bash
-# To build the base Space ROS image
-earthly +main-image
-
-# To build the dev Space ROS image
-earthly +dev-image
+./build.sh
 ```
 
-3. Push to docker hub
-
-```
-docker tag tiipsrc/space-ros:latest tiipsrc/space-ros:scai-arm64-2025-12-12
-docker push tiipsrc/space-ros:scai-arm64-2025-12-12
-
-docker tag tiipsrc/space-ros:dev tiipsrc/space-ros:scai-arm64-2025-12-12-dev
-docker push tiipsrc/space-ros:scai-arm64-2025-12-12-dev
-```
+NB: internally it will push image `tiipsrc/space-ros:scai-$ARCH-$SPACEROS_TAG` to Docker Hub. It will be used by `luna2` docker build later.
 
