@@ -381,7 +381,6 @@ image:
   # Post Installation cleanup
   DO +POST_INSTALLATION --IMAGE_VARIANT=${IMAGE_VARIANT}
 
-
   # fix ubuntu24 issue. 
   # some base ubuntu24 docker images have uid 1000 for 'ubuntu' user (ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash).
   # this is a change in behaviour from ubuntu22 base images where there was no uid 1000.
@@ -389,7 +388,6 @@ image:
   # https://askubuntu.com/questions/1513927/ubuntu-24-04-docker-images-now-includes-user-ubuntu-with-uid-gid-1000
   RUN userdel -r ubuntu
 
-  
   # Add user and group
   RUN useradd --create-home -m -s /bin/bash ${USERNAME} && \
       echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} && \
